@@ -1,0 +1,21 @@
+ops:
+    - description: Emit review JSON
+      op: write_fixture
+      args: output/agent-result.json, fixtures/review/request-changes.json
+      content: |
+        {
+          "action": "request-changes",
+          "pr_number": 1,
+          "repo": "owner/repo",
+          "head_sha": "2b7520c8c0eaa198cbe9175860878ce841ccf643",
+          "body": "Behaviour smoke: the review bot requests changes.",
+          "findings": [
+            {
+              "severity": "high",
+              "category": "logic-error",
+              "file": "behaviour/pr.txt",
+              "line": 1,
+              "description": "Behaviour smoke finding so the review requests changes."
+            }
+          ]
+        }
